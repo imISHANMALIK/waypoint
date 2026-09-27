@@ -1,0 +1,25 @@
+# Free-tier demo: filesystem state is ephemeral. No paid disk or service.
+services:
+  - type: web
+    name: waypoint
+    runtime: python
+    plan: free
+    region: oregon
+    buildCommand: bash scripts/render-build.sh
+    startCommand: uvicorn backend.app.main:app --host 0.0.0.0 --port $PORT --proxy-headers
+    healthCheckPath: /api/health
+    envVars:
+      - key: PORT
+        value: '8000'
+      - key: WAYPOINT_DATA_DIR
+        value: ./data
+      - key: PYTHON_VERSION
+        value: '3.12.14'
+      - key: NODE_VERSION
+        value: '22'
+      - key: WAYPOINT_REQUIRE_AUTH
+        value: '1'
+      - key: WAYPOINT_EPHEMERAL
+        value: '1'
+      - key: WAYPOINT_ACCESS_TOKEN
+        generateValue: true

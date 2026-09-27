@@ -1,0 +1,41 @@
+{
+  "tested_at": "2026-09-27T19:39:14.481205+00:00",
+  "environment": "Darwin arm64 / Python 3.12.14",
+  "scope": "isolated local API; deterministic mode; 250 orders; single worker",
+  "requests": 1000,
+  "concurrency": 32,
+  "duration_seconds": 3.53,
+  "requests_per_second": 282.94,
+  "status_counts": {
+    "200": 1000
+  },
+  "errors": [],
+  "latency_by_operation": {
+    "plan": {
+      "count": 50,
+      "median_ms": 127.13,
+      "p95_ms": 138.39,
+      "max_ms": 141.49
+    },
+    "read": {
+      "count": 750,
+      "median_ms": 117.8,
+      "p95_ms": 132.67,
+      "max_ms": 202.33
+    },
+    "advance": {
+      "count": 200,
+      "median_ms": 121.29,
+      "p95_ms": 135.88,
+      "max_ms": 144.37
+    }
+  },
+  "invariants": {
+    "no_lost_ticks": true,
+    "unique_assignments": true,
+    "order_count_preserved": true,
+    "approval_race": "1 applied / 15 rejected with HTTP 409",
+    "invalid_import_preserves_state": true
+  },
+  "limits": "Local synthetic load, not a production capacity guarantee. Excludes paid model latency, WAN latency and multi-worker deployments."
+}
