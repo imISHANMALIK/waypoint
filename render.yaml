@@ -18,8 +18,8 @@ services:
       - key: NODE_VERSION
         value: '22'
       - key: WAYPOINT_REQUIRE_AUTH
-        value: '1'
+        value: '0'
       - key: WAYPOINT_EPHEMERAL
         value: '1'
       - key: WAYPOINT_ACCESS_TOKEN
-        generateValue: true
+        value: ''
